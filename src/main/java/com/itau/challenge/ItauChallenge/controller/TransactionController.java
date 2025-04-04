@@ -26,4 +26,10 @@ public class TransactionController {
         transactionService.addTransaction(new Transaction(transaction.getValor(), transaction.getDataHora()));
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+    @GetMapping("/transacao")
+    public ResponseEntity<Void> clearTransaction() {
+        transactionService.clearTransactions();
+        return ResponseEntity.ok().build();
+    }
 }
